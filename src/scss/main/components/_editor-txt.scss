@@ -1,0 +1,223 @@
+.editor-txt {
+  line-height: $editor-txt-line-height;
+
+  &.columns {
+    column-count: 2;
+    column-width: 300px;
+    column-gap: spacer(lg);
+  }
+
+  :first-child:not(.btn) {
+    margin-top: 0px;
+  }
+  :last-child:not(.btn) {
+    margin-bottom: 0px;
+  }
+
+  h1 {
+    font-size: $h1-font-size;
+    font-weight: $h1-font-weight;
+    line-height: $h1-line-height;
+    font-family: $h1-font-family;
+    margin-bottom: spacer(md);
+    margin-top: spacer(lg);
+  }
+
+  h2 {
+    font-size: $h2-font-size;
+    font-weight: $h2-font-weight;
+    line-height: $h2-line-height;
+    font-family: $h2-font-family;
+    margin-bottom: spacer(md);
+    margin-top: spacer(lg);
+  }
+
+  h3 {
+    font-size: $h3-font-size;
+    font-weight: $h3-font-weight;
+    line-height: $h3-line-height;
+    font-family: $h3-font-family;
+    margin-bottom: spacer(md);
+    margin-top: spacer(lg);
+  }
+
+  h1 + h2,
+  h2 + h3 {
+    margin-top: spacer(md);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    outline: none;
+
+    .header-anchor {
+      display: none;
+
+      &__symbol img {
+        display: inline;
+        width: 24px;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &:hover {
+      .header-anchor {
+        display: inline;
+      }
+    }
+  }
+
+  p {
+    margin-bottom: spacer(md);
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  a:not(.btn) {
+    color: $color-primary;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .highlight,
+  strong {
+    font-weight: $fw-bold;
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  ul,
+  ol {
+    padding-left: 0px;
+    margin-bottom: spacer(md);
+    line-height: 2;
+  }
+
+  ol {
+    padding-left: 20px;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    list-style-type: none;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: calc((2em - 10px) / 2);
+      left: 0;
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-width: 3px;
+      border-style: solid;
+      border-color: var(--bd-primary);
+      border-radius: 50%;
+    }
+  }
+
+  ol li {
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    list-style-type: decimal;
+    list-style-position: outside;
+  }
+
+  blockquote {
+    border-left: 5px solid $color-primary;
+    padding: spacer(rg) 0 spacer(rg) spacer(md);
+    margin-bottom: spacer(md);
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    margin-bottom: spacer(md);
+  }
+
+  pre {
+    background-color: $color-black;
+    margin-bottom: spacer(md);
+    border-radius: rs(sm);
+  }
+
+  pre code {
+    display: block;
+    padding: 1.5em;
+    background: none;
+    white-space: pre;
+    color: $color-white;
+    font-size: 1em;
+    font-family: monospace;
+    text-align: left;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: inherit;
+    overflow-x: auto;
+  }
+
+  /*
+    .##.....##..#######..########..####.##.......########
+    .###...###.##.....##.##.....##..##..##.......##......
+    .####.####.##.....##.##.....##..##..##.......##......
+    .##.###.##.##.....##.########...##..##.......######..
+    .##.....##.##.....##.##.....##..##..##.......##......
+    .##.....##.##.....##.##.....##..##..##.......##......
+    .##.....##..#######..########..####.########.########
+    */
+  @media only screen and (max-width: $phone) {
+    line-height: $editor-txt-line-height-sm;
+
+    h1 {
+      font-size: $h1-font-size-mobile;
+      margin-bottom: spacer(rg);
+    }
+
+    h2 {
+      font-size: $h2-font-size-mobile;
+      margin-bottom: spacer(rg);
+    }
+
+    h3 {
+      font-size: $h3-font-size-mobile;
+      margin-bottom: spacer(rg);
+    }
+
+    ul,
+    ol {
+      line-height: 1.5;
+    }
+
+    ul li {
+      &::before {
+        top: calc((1.5em - 10px) / 2);
+      }
+    }
+
+    blockquote {
+      font-size: 20px;
+      padding: spacer(sm) 0 spacer(sm) spacer(rg);
+    }
+  }
+  //Mobile
+}
+//editorTxt

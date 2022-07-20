@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {% include 'layouts/blocks/head.njk' %}
+  {% block head %}{% endblock %}
+</head>
+<body>
+<div id="top" class="site-wrap">
+  <div class="maarten">
+    <header>
+      {% include 'layouts/blocks/navigation.njk' %}
+      {% block header %}{% endblock %}
+    </header>
+
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+  </div><!-- /sitename -->
+
+  {% include 'layouts/blocks/footer.njk' %}
+
+  {% include 'layouts/utils/scroll-to-top.njk' %}
+</div><!-- /sitewrap-->
+
+<div class="mobileIndicator show@sm"></div>
+<script src="{{ '/static/js/general.min.js' | buildUrl(true) }}"></script>
+</body>
+</html>

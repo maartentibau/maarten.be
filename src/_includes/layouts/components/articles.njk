@@ -1,0 +1,20 @@
+<ul class="articles elements-spacer-md">
+  {% for post in posts | publishedPosts %}
+    <li>
+      <a href="{{ post.url }}" title="{{ post.data.title }}">
+        <article class="article group-hover">
+          <h3 class="mb-sm fw-extra-light f-xxl f-xl@sm group-c-primary">{{ post.data.title }}</h3>
+          <div class="c-grey mb-xs f-sm@sm">{{ post.data.date | formatDate }}</div>
+          <div class="c-secondary f-sm">{{ post.data.hashtags | formatHashtags }}</div>
+        </article>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<ul class="pagination pt-lg">
+  {% for href in pagination.hrefs %}
+    <li class="{% if loop.index == (pagination.pageNumber + 1) %}active{% endif %}"><a
+        href="{{ href }}">{{ loop.index }}</a></li>
+  {% endfor %}
+</ul>

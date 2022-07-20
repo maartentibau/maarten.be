@@ -1,0 +1,10 @@
+<a href="{{ post.url }}" class="col-12">
+  <article class="article group-hover h-100 rs-sm bg-grey-2 p-md p@sm">
+    {% if post.data.feature == true %}<span
+      class="article-label tt-u f-sm fw-medium rs pt-xxs pr pb-xxs pl ml-md ml-off@sm lh-lg">Featured</span>{% endif %}
+    <h3 class="fw-extra-light f-xxl f-xl@sm group-c-primary">{{ post.data.title }}</h3>
+    <div class="bt b-grey mt-xs mb-xs"></div>
+    <div class="c-grey mb-xs f-sm@sm">{{ post.data.date | formatDate }}</div>
+    <div class="c-secondary f-sm">{{ post.data.hashtags | formatHashtags }}</div>
+  </article>
+</a>

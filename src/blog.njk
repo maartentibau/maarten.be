@@ -1,0 +1,36 @@
+---
+title: "Blog"
+description: "Various articles on Angular, Testing, TypeScript, tips &amp; tricks and all other sorts of topics related to frontend development."
+pagination: {
+"data": collections.posts,
+"size": 4,
+"alias": "posts",
+"reverse": true
+}
+---
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main class="row mb-xxl">
+    {% for post in collections.posts | featuredPost %}
+      <div class="panel bg-grey-3 pt-lg pb-lg mb-xl">
+        <div class="grid">
+          <div class="col-24">
+            <a class="d-b" href="{{ post.url }}" title="{{ post.data.title }}">
+              <article class="article group-hover pt mt-md">
+                <span class="article-label tt-u f-sm fw-medium rs pt-xxs pr pb-xxs pl lh-lg">Featured</span>
+                <h3 class="mb-sm fw-extra-light f-xxl f-xl@sm group-c-primary">{{ post.data.title }}</h3>
+                <div class="c-grey mb-xs f-sm@sm">{{ post.data.date | formatDate }}</div>
+                <div class="c-secondary f-sm">{{ post.data.hashtags | formatHashtags }}</div>
+              </article>
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% include 'layouts/components/articles.njk' %}
+  </main>
+{% endblock %}
+
+{% include 'layouts/components/get-in-touch.njk' %}

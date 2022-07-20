@@ -1,0 +1,53 @@
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main class="row">
+    <div class="panel bg-grey-3 pt-lg pb-lg mb-lg">
+      <div class="grid">
+        <div class="col-17">
+          <h1 class="fw-medium f-xxxl f-xxl@sm">{{ title }}</h1>
+        </div>
+      </div>
+      <div class="mt-xs mb-xs bb b-grey"></div>
+      <div class="c-grey mb-xs f-sm@sm">{{ date | formatDate }}</div>
+      <div class="c-secondary f-sm">{{ hashtags | formatHashtags }}</div>
+    </div>
+
+    <div class="grid">
+      <div class="col-17 mb-xxl">
+        <div class="editor-txt br b-grey pr-lg pr-off@sm b-off@sm">
+          {{ content | safe }}
+        </div>
+        <div class="pt-lg f-sm lh-lg fw-extra-light br b-grey">
+          <p class="ta-c">Notice a typo or some other issue? Feel free to submit a PR.</p>
+          <p class="ta-c socials center pt-sm"><a href="https://github.com/maartentibau/maarten.be/blob/main/{{ page.inputPath }}" target="_blank"
+             rel="noopener noreferrer"><i class="icon-github"></i></a></p>
+        </div>
+      </div>
+
+      <div class="col-7 pt-md pt-off@sm">
+        <a class="d-f middle mb-lg hide@sm" href="/blog"><i class="icon-arrow-left c-primary f-lg mr-xs"></i> Back to
+          overview</a>
+        <div class="fw-medium f-md ta-c@sm">Share with your friends</div>
+        <ul class="socials f-lg mt-xs mb-md center@sm">
+          <li><a href="https://twitter.com/intent/tweet?text={{ title }}&url={{ site.url }}{{ page.url }}"
+                 target="_blank" rel="noopener noreferrer" title="Share on article on twitter"><i class="icon-twitter"></i></a></li>
+          <li><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" target="_blank"
+                 rel="noopener noreferrer" title="Share on article on LinkedIn"><i class="icon-linkedin"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <section class="bg-grey-3 pt-xl pb-xxl">
+    <div class="row">
+      <h2 class="fw-light f-xxxl f-xxl@sm ta-c mb-xl">Other Articles You Might Like</h2>
+
+      <div class="grid elements-spacer-lg elements-spacer@sm">
+        {% for post in collections.posts | recentPosts(2, page.url) %}
+          {% include 'layouts/components/article-link.njk' %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

@@ -1,0 +1,429 @@
+/*
+╔╦╗┌─┐┌─┐┬┌─┌┬┐┌─┐┌─┐  ┌─┐┬┬─┐┌─┐┌┬┐  ┌─┐┬─┐┬┌┬┐
+ ║║├┤ └─┐├┴┐ │ │ │├─┘  ├┤ │├┬┘└─┐ │   │ ┬├┬┘│ ││
+═╩╝└─┘└─┘┴ ┴ ┴ └─┘┴    └  ┴┴└─└─┘ ┴   └─┘┴└─┴─┴┘o
+
+    .row --> Wrapper (Container)
+    .grid --> Flex Grid wrapper
+    .flex --> Display Flex
+    .col --> Columns
+
+    Grid
+    ======
+    .start, .center, .end, .top, .middle, .bottom, .around, .between, .equal-height --> align items
+
+    .reverse, .column, .column-reverse --> Direction
+
+    .no-gutter --> Reset Padding & Margin
+
+    .gutter-md --> for md gutter
+
+    Col
+    ======
+    .col
+    .col-1 up to .col-24 default
+
+    .self-start, .self-end, .self-cente, .self-baseline, .self-stretch --> Align Self. Align the col
+
+    .first, .last --> Order of the col
+
+    .auto, .auto@sm, .auto-all --> change witdh of the col to auto witdh
+
+    FLex
+    =====
+    .flex --> Display Flex
+    .grow --> flex-grow:1;
+    .shrink --> flex-shrink:1;
+
+    Prefix
+    =======
+    @sm -->  for mobile. Works with everything
+    -all --> Only for .col (example: .col-all-12). Col 12 on mobile and desktop.
+*/
+
+.row {
+  width: 100%;
+  max-width: $row-max-width;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $gutter-sm;
+  padding-left: $gutter-sm;
+
+  &-full {
+    padding-right: $gutter-sm;
+    padding-left: $gutter-sm;
+  }
+  //full
+}
+//row
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin-right: -#{$gutter-sm};
+  margin-left: -#{$gutter-sm};
+
+  &.no-row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+//grid
+
+.grid > [class*='col'] {
+  box-sizing: border-box;
+  padding-right: $gutter-sm;
+  padding-left: $gutter-sm;
+  flex-grow: 1;
+  width: 100%;
+
+  &.no-gutter {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &.auto-all,
+  &.auto\@all {
+    flex-basis: auto;
+    flex-grow: 0;
+    width: auto;
+  }
+}
+//Col
+
+/*
+.########..########..######..##....##.########..#######..########.
+.##.....##.##.......##....##.##...##.....##....##.....##.##.....##
+.##.....##.##.......##.......##..##......##....##.....##.##.....##
+.##.....##.######....######..#####.......##....##.....##.########.
+.##.....##.##.............##.##..##......##....##.....##.##.......
+.##.....##.##.......##....##.##...##.....##....##.....##.##.......
+.########..########..######..##....##....##.....#######..##.......
+*/
+@media screen and (min-width: $start-grid) {
+  .row {
+    padding-right: #{$gutter};
+    padding-left: #{$gutter};
+
+    &-full {
+      padding-right: #{$gutter};
+      padding-left: #{$gutter};
+    }
+    //full
+  }
+  //row
+
+  .grid {
+    margin-right: -#{$gutter};
+    margin-left: -#{$gutter};
+  }
+  //grid
+
+  .grid > [class*='col'] {
+    padding-right: $gutter;
+    padding-left: $gutter;
+  }
+  //col
+
+  .col {
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  //col
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      flex-basis: calc(100% / #{$grid-columns} * #{$i});
+      max-width: calc(100% / #{$grid-columns} * #{$i});
+    }
+    .col-offset-#{$i} {
+      margin-left: calc(100% / #{$grid-columns} * #{$i});
+    }
+    .col-pull-#{$i} {
+      margin-left: calc(-100% / #{$grid-columns} * #{$i});
+    }
+  }
+  //cols list
+
+  .auto {
+    flex-basis: auto;
+    flex-grow: 0 !important;
+    width: auto !important;
+  }
+}
+//desktop
+
+.start {
+  justify-content: flex-start;
+}
+.center {
+  justify-content: center;
+}
+.end {
+  justify-content: flex-end;
+}
+.top {
+  align-items: flex-start;
+}
+.middle {
+  align-items: center;
+}
+.bottom {
+  align-items: flex-end;
+}
+.around {
+  justify-content: space-around;
+}
+.between {
+  justify-content: space-between;
+}
+.equal-height {
+  align-items: stretch;
+
+  [class*='col'] > * {
+    height: 100%;
+  }
+}
+.reverse {
+  flex-direction: row-reverse;
+}
+.column {
+  flex-direction: column;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+.no-gutter {
+  margin-right: 0;
+  margin-left: 0;
+  > [class*='col'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.self-start {
+  align-self: flex-start;
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
+.self-baseline {
+  align-self: baseline;
+}
+.self-stretch {
+  align-self: stretch;
+}
+.first {
+  order: -1;
+}
+.last {
+  order: 1;
+}
+.nowrap {
+  flex-wrap: nowrap;
+}
+.wrap {
+  flex-wrap: wrap;
+}
+.grow {
+  flex-grow: 1;
+}
+.shrink {
+  flex-shrink: 1;
+}
+
+/*
+....###....##.......##......
+...##.##...##.......##......
+..##...##..##.......##......
+.##.....##.##.......##......
+.#########.##.......##......
+.##.....##.##.......##......
+.##.....##.########.########
+*/
+.col-all,
+.col\@all {
+  flex-basis: 0;
+  max-width: 100%;
+}
+@for $i from 1 through $grid-columns {
+  .col-all-#{$i},
+  .col-#{$i}\@all {
+    flex-basis: calc(100% / #{$grid-columns} * #{$i});
+    max-width: calc(100% / #{$grid-columns} * #{$i});
+  }
+  .col-all-offset-#{$i},
+  .col-offset-#{$i}\@all {
+    margin-left: calc(100% / #{$grid-columns} * #{$i});
+  }
+  .col-all-pull-#{$i},
+  .col-pull-#{$i}\@all {
+    margin-left: calc(-100% / #{$grid-columns} * #{$i});
+  }
+}
+
+//========================
+//Gutter desktop
+//========================
+@each $element, $val in $col-gutter-list {
+  $suffix: checkOnRegular($element);
+
+  .gutter#{$suffix} {
+    margin-right: -#{$val}px;
+    margin-left: -#{$val}px;
+    & > [class*='col'] {
+      padding-right: #{$val}px;
+      padding-left: #{$val}px;
+    }
+  }
+}
+//gutters
+
+/*
+.##.....##..#######..########..####.##.......########
+.###...###.##.....##.##.....##..##..##.......##......
+.####.####.##.....##.##.....##..##..##.......##......
+.##.###.##.##.....##.########...##..##.......######..
+.##.....##.##.....##.##.....##..##..##.......##......
+.##.....##.##.....##.##.....##..##..##.......##......
+.##.....##..#######..########..####.########.########
+*/
+@each $queryPrefix, $query in $query-list {
+  @media only screen and #{$query} {
+    .row\@#{$queryPrefix} {
+      padding-right: $gutter-sm;
+      padding-left: $gutter-sm;
+    }
+    //row
+
+    .start\@#{$queryPrefix} {
+      justify-content: flex-start;
+    }
+    .center\@#{$queryPrefix} {
+      justify-content: center;
+    }
+    .end\@#{$queryPrefix} {
+      justify-content: flex-end;
+    }
+    .top\@#{$queryPrefix} {
+      align-items: flex-start;
+    }
+    .middle\@#{$queryPrefix} {
+      align-items: center;
+    }
+    .bottom\@#{$queryPrefix} {
+      align-items: flex-end;
+    }
+    .around\@#{$queryPrefix} {
+      justify-content: space-around;
+    }
+    .between\@#{$queryPrefix} {
+      justify-content: space-between;
+    }
+    .first\@#{$queryPrefix} {
+      order: -1;
+    }
+    .last\@#{$queryPrefix} {
+      order: 1;
+    }
+    .equal-height\@#{$queryPrefix} {
+      align-items: stretch;
+
+      [class*='col'] > * {
+        height: 100%;
+      }
+    }
+    .reverse\@#{$queryPrefix} {
+      flex-direction: row-reverse;
+    }
+    .column\@#{$queryPrefix} {
+      flex-direction: column;
+    }
+    .column-reverse\@#{$queryPrefix} {
+      flex-direction: column-reverse;
+    }
+    .no-gutter\@#{$queryPrefix},
+    .gutter-off\@#{$queryPrefix} {
+      margin-right: 0;
+      margin-left: 0;
+      > [class*='col'] {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+    .self-start\@#{$queryPrefix} {
+      align-self: flex-start;
+    }
+    .self-end\@#{$queryPrefix} {
+      align-self: flex-end;
+    }
+    .self-center\@#{$queryPrefix} {
+      align-self: center;
+    }
+    .self-baseline\@#{$queryPrefix} {
+      align-self: baseline;
+    }
+    .self-stretch\@#{$queryPrefix} {
+      align-self: stretch;
+    }
+    .nowrap\@#{$queryPrefix} {
+      flex-wrap: nowrap;
+    }
+    .wrap\@#{$queryPrefix} {
+      flex-wrap: wrap;
+    }
+    .grow\@#{$queryPrefix} {
+      flex-grow: 1;
+    }
+    .shrink\@#{$queryPrefix} {
+      flex-shrink: 1;
+    }
+
+    //========================
+    //Col at mobile
+    //========================
+    .col\@#{$queryPrefix} {
+      flex-basis: 0;
+      max-width: 100%;
+    }
+    @for $i from 1 through $grid-columns {
+      .col-#{$i}\@#{$queryPrefix} {
+        flex-basis: calc(100% / #{$grid-columns} * #{$i});
+        max-width: calc(100% / #{$grid-columns} * #{$i});
+      }
+      .col-offset-#{$i}\@#{$queryPrefix} {
+        margin-left: calc(100% / #{$grid-columns} * #{$i});
+      }
+      .col-pull-#{$i}\@#{$queryPrefix} {
+        margin-left: calc(-100% / #{$grid-columns} * #{$i});
+      }
+    }
+    //cols list
+
+    .auto\@#{$queryPrefix} {
+      flex-basis: auto;
+      flex-grow: 0 !important;
+      width: auto !important;
+    }
+
+    //========================
+    //Gutter mobile
+    //========================
+    @each $element, $val in $col-gutter-list {
+      $suffix: checkOnRegular($element);
+      .gutter#{$suffix}\@#{$queryPrefix} {
+        margin-right: -#{$val}px;
+        margin-left: -#{$val}px;
+        & > [class*='col'] {
+          padding-right: #{$val}px;
+          padding-left: #{$val}px;
+        }
+      }
+    }
+    //gutters mobile
+  }
+  //Mobile
+}

@@ -1,0 +1,155 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+:root,
+.theme-dark {
+  --c-text: #{$color-white};
+  --c-primary: #{$color-blue};
+  --c-secondary: #{$color-yellow};
+  --c-grey: #{$color-grey-400};
+
+  --bg-primary: #{$color-blue};
+  --bg-secondary: #{$color-yellow};
+  --bg-grey-1: #{$color-grey-800};
+  --bg-grey-2: #{$color-grey-700};
+  --bg-grey-3: #{$color-grey-600};
+  --bg-grey-4: #{$color-grey-500};
+  --bg-grey-5: #{$color-black};
+
+  --bd-primary: #{$color-blue};
+  --bd-secondary: #{$color-yellow};
+  --bd-grey: #{$color-grey-500};
+}
+
+.theme-light {
+  --c-text: #{$color-grey-800};
+  --c-primary: #{$color-blue};
+  --c-secondary: #{$color-yellow-dark};
+  --c-grey: #{$color-grey-400};
+
+  --bg-primary: #{$color-blue};
+  --bg-secondary: #{$color-yellow};
+  --bg-grey-1: #{$color-grey-100};
+  --bg-grey-2: #{$color-white};
+  --bg-grey-3: #{$color-grey-200};
+  --bg-grey-4: #{$color-grey-300};
+  --bg-grey-5: #{$color-grey-300};
+
+  --bd-primary: #{$color-blue};
+  --bd-secondary: #{$color-yellow};
+  --bd-grey: #{$color-grey-300};
+}
+
+@media (prefers-color-scheme: light) {
+  :root,
+  .theme-light {
+    --c-text: #{$color-grey-800};
+    --c-primary: #{$color-blue};
+    --c-secondary: #{$color-yellow-dark};
+    --c-grey: #{$color-grey-400};
+
+    --bg-primary: #{$color-blue};
+    --bg-secondary: #{$color-yellow};
+    --bg-grey-1: #{$color-grey-100};
+    --bg-grey-2: #{$color-white};
+    --bg-grey-3: #{$color-grey-200};
+    --bg-grey-4: #{$color-grey-300};
+
+    --bd-primary: #{$color-blue};
+    --bd-secondary: #{$color-yellow};
+    --bd-grey: #{$color-grey-300};
+  }
+
+  .theme-dark {
+    --c-text: #{$color-white};
+    --c-primary: #{$color-blue};
+    --c-secondary: #{$color-yellow};
+    --c-grey: #{$color-grey-400};
+
+    --bg-primary: #{$color-blue};
+    --bg-secondary: #{$color-yellow};
+    --bg-grey-1: #{$color-grey-800};
+    --bg-grey-2: #{$color-grey-700};
+    --bg-grey-3: #{$color-grey-600};
+    --bg-grey-4: #{$color-grey-500};
+
+    --bd-primary: #{$color-blue};
+    --bd-secondary: #{$color-yellow};
+    --bd-grey: #{$color-grey-500};
+  }
+}
+
+body {
+  min-width: $min-width;
+  font-weight: $body-font-weight;
+  font-size: $body-font;
+  line-height: $body-line-height;
+  font-family: $font-primary;
+  color: var(--c-text);
+  background-color: var(--bg-grey-1);
+
+  @media only screen and (max-width: $phone) {
+    min-width: 0px;
+    margin: 0px;
+  }
+  /* tablet scaling, portrait, fix */
+  @media only screen and (width: 768px) {
+    min-height: 1200px;
+  }
+}
+
+.site-wrap {
+  max-width: $site-wrap-max-width;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--bg-grey-2);
+
+  &-icon {
+    position: absolute;
+    top: spacer(lg);
+    left: 0;
+    transform: translateX(-50%);
+
+    path {
+      fill: var(--bg-grey-4);
+    }
+
+    @media only screen and (max-width: $phone) {
+      display: none;
+    }
+  }
+}
+
+.#{$sitename} {
+  position: relative;
+  z-index: 1;
+
+  @media only screen and (min-width: $phone) {
+    min-height: calc(100vh - #{$footer-height});
+  }
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

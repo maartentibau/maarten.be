@@ -1,0 +1,131 @@
+---
+permalink: /about/
+title: "About Me"
+description: "Personal website with various articles on all sorts of topics related to frontend development"
+---
+{% extends 'base.njk' %}
+
+{% block content %}
+  <main>
+    <div class="row">
+      <div class="panel bg-grey-3 pt-lg pb-lg mb-xl">
+        <div class="grid">
+          <div class="col-17">
+            <h1 class="fw-extra-light pb-sm c-secondary f-xxl f-lg@sm">About me</h1>
+            <p class="fw-extra-light f-xxxl f-xxl@sm mb-sm">I'm a freelance <strong class="fw-medium c-primary">Frontend
+                Developer</strong></p>
+            <p class="mb f-xl c-grey lh-lg f-lg@sm"><strong class="fw-medium c-primary">Angular &amp;
+                TypeScript</strong> are my daily drivers, but I like to dive into other topics as well.</p>
+          </div>
+        </div>
+
+        <div class="editor-txt fw-light columns">
+          <p>Over the years I've built up a love for creating reactive, well-designed web applications. Test driven
+            development is a practice I like to use and over the years I have grown to love more and more.</p>
+
+          <p>I'm an active person within the Angular community and on <a href="https://twitter.com/maartentibau"
+                                                                         target="_blank" rel=”noopener noreferrer“
+                                                                         title=" Twitter profile - Maarten Tibau">Twitter</a>.
+            Since 2019 I'm part of the Core Team of <a href="https://ng-be.org/" target="_blank"
+                                                       rel="noopener noreferrer"
+                                                       title="NG-BE Conference website">NG-BE</a>, a yearly Angular
+            conference in Ghent.</p>
+
+          <p>Although my main focus is the frontend space, you'll also can find me exploring the likes Rust, Deno or
+            Flutter.</p>
+          <p>I'm {% age %} years old, living in Belgium with my wife and 2 amazing daughters. I enjoy walks, watching a
+            good series or movie, building LEGO sets and spending time with family &amp; friends.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h2 class="f-xxxxl fw-extra-light ta-c f-xxxl@sm mb-xl">My Journey so far...</h2>
+    </div>
+
+    <div class="journey pb-xxl pb-off@sm">
+      <div class="row">
+        <ul class="journey-roadmap">
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jun 2021</span> - Present
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Senior Angular Developer</span>
+                <span class="fw-light f-sm@sm">Verhaert Digital</span>
+              </div>
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jan 2019</span> - Present
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Core Team Member</span>
+                <span class="fw-light f-sm@sm">NG-BE</span>
+              </div>
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Feb 2011</span> - Present
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Frontend Architect <br> Senior Angular Developer</span>
+                <span class="fw-light f-sm@sm">Webtrix</span>
+              </div>
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jun 2021</span> - Dec 2021
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Senior Angular Developer</span>
+                <span class="fw-light f-sm@sm">Agentschap Wegen en Verkeer </span>
+              </div>
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jun 2019</span> - Apr 2021
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Lead Frontend Engineer <br>Angular Coach</span>
+                <span class="fw-light f-sm@sm">Colruyt Group</span>
+              </div>
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jun 2018</span> - Jun 2019
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Angular Trainer</span>
+                <span class="fw-light f-sm@sm">Thoughtram</span>
+              </div>
+              s
+            </div>
+          </li>
+          <li class="journey-road">
+            <div class="journey-roadmark">
+              <div class="fw-medium f-lg c-grey mb-xxs f-md@sm"><span class="c-secondary">Jul 2018</span> - Jun 2019
+              </div>
+              <div>
+                <span class="d-b f-md f@sm">Senior Angular Developer</span>
+                <span class="fw-light f-sm@sm">Colruyt Group</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="journey-icon" width="460" height="460" viewBox="0 0 460 460">
+        <path
+          d="M230,460C103.18,460,0,356.82,0,230S103.18,0,230,0,460,103.18,460,230,356.82,460,230,460Zm0-332.19A102.19,102.19,0,1,0,332.19,230h0A102.3,102.3,0,0,0,230,127.81Z" />
+      </svg>
+    </div>
+  </main>
+{% endblock %}
+
+{% include 'layouts/components/get-in-touch.njk' %}

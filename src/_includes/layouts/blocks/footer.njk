@@ -1,0 +1,40 @@
+<footer class="ftr">
+  <div class="row">
+    <div class="grid no-gutter ta-c@sm">
+      <div class="col-7">
+        <div class="h-100 pt-xl pb-xl pr-lg pr-off@sm">
+          <strong class="d-b mb f-xl fw-medium">Maarten Tibau</strong>
+          <a class="f-md td-u-hover" href="mailto:hello@maarten.be">hello@maarten.be</a>
+          <ul class="socials f-lg mt-md mb-md center@sm">
+            <li><a href="https://twitter.com/maartentibau" target="_blank" rel="noopener noreferrer"><i class="icon-twitter"></i></a></li>
+            <li><a href="https://be.linkedin.com/in/maartentibau" target="_blank" rel="noopener noreferrer"><i class="icon-linkedin"></i></a></li>
+            <li><a href="https://github.com/maartentibau" target="_blank" rel="noopener noreferrer"><i class="icon-github"></i></a></li>
+          </ul>
+          <div class="lh-lg">&copy {% year %} Maarten Tibau</div>
+        </div>
+      </div>
+
+      <div class="col-8 hide@sm">
+        <div class="h-100 pt-xl pb-xl pr-lg pl-lg bg-grey-1 bg-stretch-right@sm bg-stretch-left@sm">
+          <h2 class="mb f-xl fw-medium">Sitemap</h2>
+          <ul class="bulleted-list ta-l d-ib@sm">
+            <li class="mb"><a class="td-u-hover" href="/">Home</a></li>
+            <li class="mb"><a class="td-u-hover" href="/about">About me</a></li>
+            <li><a class="td-u-hover" href="/blog">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-9 hide@sm">
+        <div class="h-100 pt-xl pb-xl pl-lg pl-off@sm">
+          <h2 class="mb f-xl fw-medium">Most recent posts</h2>
+          <ul class="bulleted-list ta-l d-ib@sm">
+            {% for post in collections.posts | recentPosts(3) %}
+              {% include 'layouts/components/article-list-link.njk' %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,63 @@
+%icon-style {
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin overlay() {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+@function checkOnRegular($element) {
+  $output: '';
+
+  @if $element== 'rg' {
+    $output: '';
+  } @else {
+    $output: '-' + $element;
+  }
+
+  @return $output;
+}
+
+@function f($key) {
+  @if map-has-key($font-list, $key) {
+    @return map-get($font-list, $key) + px;
+  }
+  @warn "Unknown `#{$key}` in $font-list.";
+  @return null;
+}
+@function spacer($key) {
+  @if map-has-key($spacer-list, $key) {
+    @return map-get($spacer-list, $key) + px;
+  }
+  @warn "Unknown `#{$key}` in $spacer-list.";
+  @return null;
+}
+@function lh($key) {
+  @if map-has-key($line-height-list, $key) {
+    @return map-get($line-height-list, $key);
+  }
+  @warn "Unknown `#{$key}` in $line-height-list.";
+  @return null;
+}
+@function rs($key) {
+  @if map-has-key($border-radius-list, $key) {
+    @return map-get($border-radius-list, $key) + px;
+  }
+
+  @warn "Unknown `#{$key}` in $border-radius-list.";
+  @return null;
+}

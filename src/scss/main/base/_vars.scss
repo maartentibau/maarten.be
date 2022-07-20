@@ -1,0 +1,225 @@
+/*
+..######...########..####.########.
+.##....##..##.....##..##..##.....##
+.##........##.....##..##..##.....##
+.##...####.########...##..##.....##
+.##....##..##...##....##..##.....##
+.##....##..##....##...##..##.....##
+..######...##.....##.####.########.
+*/
+$phone: 767px;
+$tablet: 1024px;
+$query-list: (
+  sm: '(max-width: #{$phone})' //, md: "(min-width: #{$phone + 1}) and (max-width: #{$tablet})",
+);
+
+$min-width: 960px;
+$site-wrap-max-width: 100%;
+
+$grid-columns: 24 !default; // Set number of columns in the grid
+$gutter: 30px !default; // Set gutter size for Desktop
+$gutter-sm: 15px !default; // Set gutter size for Mobile
+$start-grid: 768px; //Start of the grid
+
+$col-gutter-list: (
+  xs: 10,
+  sm: 15,
+  rg: 30,
+  md: 40,
+);
+$row-max-width: 1400px;
+
+/*
+..######...#######..##........#######..########...######.
+.##....##.##.....##.##.......##.....##.##.....##.##....##
+.##.......##.....##.##.......##.....##.##.....##.##......
+.##.......##.....##.##.......##.....##.########...######.
+.##.......##.....##.##.......##.....##.##...##.........##
+.##....##.##.....##.##.......##.....##.##....##..##....##
+..######...#######..########..#######..##.....##..######.
+*/
+$color-white: #fff;
+$color-grey-100: #f6f6f6;
+$color-grey-200: #f4f4f4;
+$color-grey-300: #ebebeb;
+$color-grey-400: #a7a7a7;
+$color-grey-500: #3f4048;
+$color-grey-600: #31323a;
+$color-grey-700: #25262e;
+$color-grey-800: #1a1b21;
+$color-black: #000;
+
+$color-blue-light: #848ff5;
+$color-blue: #6271ff;
+$color-blue-dark: #2735ba;
+$color-yellow-light: #f3cf00;
+$color-yellow: #ffdb01;
+$color-yellow-dark: #f5c801;
+
+$color-primary-light: $color-blue-light;
+$color-primary: $color-blue;
+$color-primary-dark: $color-blue-dark;
+$color-secondary-light: $color-yellow-light;
+$color-secondary: $color-yellow;
+$color-secondary-dark: $color-yellow-dark;
+
+$color-list: ();
+
+/*
+.########..#######..##....##.########
+.##.......##.....##.###...##....##...
+.##.......##.....##.####..##....##...
+.######...##.....##.##.##.##....##...
+.##.......##.....##.##..####....##...
+.##.......##.....##.##...###....##...
+.##........#######..##....##....##...
+*/
+$font-primary: 'Poppins', sans-serif;
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
+
+$weight-list: (
+  extra-light: $fw-extra-light,
+  light: $fw-light,
+  regular: $fw-regular,
+  medium: $fw-medium,
+  bold: $fw-bold,
+);
+
+$h1-font-size: 45px;
+$h1-font-size-mobile: 30px;
+$h1-line-height: 1.5;
+$h1-font-weight: $fw-medium;
+$h1-font-family: $font-primary;
+
+$h2-font-size: 35px;
+$h2-font-size-mobile: 25px;
+$h2-line-height: 1.5;
+$h2-font-weight: $fw-medium;
+$h2-font-family: $font-primary;
+
+$h3-font-size: 25px;
+$h3-font-size-mobile: 20px;
+$h3-line-height: 1.5;
+$h3-font-weight: $fw-medium;
+$h3-font-family: $font-primary;
+
+$font-list: (
+  xs: 12,
+  sm: 14,
+  rg: 16,
+  md: 18,
+  lg: 20,
+  xl: 25,
+  xxl: 35,
+  xxxl: 45,
+  xxxxl: 65,
+);
+$line-height-list: (
+  rg: 1,
+  md: 1.2,
+  lg: 1.5,
+);
+
+/*
+.####..######...#######..##....##..######.
+..##..##....##.##.....##.###...##.##....##
+..##..##.......##.....##.####..##.##......
+..##..##.......##.....##.##.##.##..######.
+..##..##.......##.....##.##..####.......##
+..##..##....##.##.....##.##...###.##....##
+.####..######...#######..##....##..######.
+*/
+$icon-moon: '\e900';
+$icon-sun: '\e901';
+$icon-arrow-left-long: '\e902';
+$icon-arrow-right-long: '\e903';
+$icon-arrow-down: '\e90c';
+$icon-arrow-up: '\e90d';
+$icon-arrow-left: '\e90e';
+$icon-arrow-right: '\e90f';
+$icon-search: '\e904';
+$icon-carret-down: '\e905';
+$icon-carret-up: '\e906';
+$icon-mail: '\e910';
+$icon-youtube: '\e908';
+$icon-facebook: '\e907';
+$icon-whatsapp: '\e911';
+$icon-instagram: '\e909';
+$icon-linkedin: '\e90a';
+$icon-twitter: '\e90b';
+$icon-github: '\e912';
+
+/*
+.########...#######..########..##....##
+.##.....##.##.....##.##.....##..##..##.
+.##.....##.##.....##.##.....##...####..
+.########..##.....##.##.....##....##...
+.##.....##.##.....##.##.....##....##...
+.##.....##.##.....##.##.....##....##...
+.########...#######..########.....##...
+*/
+$body-font: 16px;
+$body-line-height: 1.2;
+$body-font-weight: $fw-regular;
+
+$editor-txt-line-height: 2;
+$editor-txt-line-height-sm: 1.5;
+
+/*
+..######...########.##....##.########.########.....###....##......
+.##....##..##.......###...##.##.......##.....##...##.##...##......
+.##........##.......####..##.##.......##.....##..##...##..##......
+.##...####.######...##.##.##.######...########..##.....##.##......
+.##....##..##.......##..####.##.......##...##...#########.##......
+.##....##..##.......##...###.##.......##....##..##.....##.##......
+..######...########.##....##.########.##.....##.##.....##.########
+*/
+$sitename: 'maarten';
+$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+$footer-height: 420px;
+$hover-effect-list: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+);
+$border-radius-list: (
+  sm: 10,
+  rg: 15,
+  md: 25,
+  off: 0,
+);
+$z-index-list: (0, 10, 20, 30);
+
+/*
+..######..########.....###.....######..########.########.
+.##....##.##.....##...##.##...##....##.##.......##.....##
+.##.......##.....##..##...##..##.......##.......##.....##
+..######..########..##.....##.##.......######...########.
+.......##.##........#########.##.......##.......##...##..
+.##....##.##........##.....##.##....##.##.......##....##.
+..######..##........##.....##..######..########.##.....##
+*/
+$spacer-list: (
+  xxs: 5,
+  xs: 15,
+  sm: 20,
+  rg: 30,
+  md: 40,
+  lg: 60,
+  xl: 80,
+  xxl: 120,
+  off: 0,
+);
+$elements-spacer-list: (
+  xxs: 10,
+  xs: 15,
+  sm: 20,
+  rg: 30,
+  md: 40,
+  lg: 60,
+  xl: 80,
+);

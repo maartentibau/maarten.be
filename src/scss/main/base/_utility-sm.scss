@@ -1,0 +1,351 @@
+@media only screen and (min-width: $phone) {
+  .show\@sm {
+    display: none !important;
+  }
+}
+.show\@md {
+  display: none !important;
+}
+@media only screen and (min-width: $phone + 1) and (max-width: $tablet) {
+  .show\@md {
+    display: block !important;
+  }
+}
+
+/*
+..#######..##.....##.########.########..##....##
+.##.....##.##.....##.##.......##.....##..##..##.
+.##.....##.##.....##.##.......##.....##...####..
+.##.....##.##.....##.######...########.....##...
+.##..##.##.##.....##.##.......##...##......##...
+.##....##..##.....##.##.......##....##.....##...
+..#####.##..#######..########.##.....##....##...
+*/
+@each $queryPrefix, $query in $query-list {
+  @media only screen and #{$query} {
+    .hide\@#{$queryPrefix} {
+      display: none !important;
+    }
+
+    /*=============================
+            Postion
+        ===============================*/
+    .p-r\@#{$queryPrefix} {
+      position: relative;
+    }
+    .p-a\@#{$queryPrefix} {
+      position: absolute;
+    }
+    .p-f\@#{$queryPrefix} {
+      position: fixed;
+    }
+    .p-s\@#{$queryPrefix} {
+      position: static;
+    }
+    /*=============================
+            Display
+        ===============================*/
+    .d-b\@#{$queryPrefix} {
+      display: block;
+    }
+    .d-ib\@#{$queryPrefix} {
+      display: inline-block;
+    }
+    .d-n\@#{$queryPrefix} {
+      display: none;
+    }
+    .d-f\@#{$queryPrefix} {
+      display: flex;
+    }
+    /*=============================
+            Overflow
+        ===============================*/
+    .o-h\@#{$queryPrefix} {
+      overflow: hidden;
+    }
+    .o-v\@#{$queryPrefix} {
+      overflow: visible;
+    }
+    /*=============================
+            Width
+        ===============================*/
+    .w-20\@#{$queryPrefix} {
+      width: 20%;
+    }
+    .w-50\@#{$queryPrefix} {
+      width: 50%;
+    }
+    .w-100\@#{$queryPrefix} {
+      width: 100%;
+    }
+    .w-a\@#{$queryPrefix} {
+      width: auto;
+    }
+    .min-w-100\@#{$queryPrefix} {
+      min-width: 100%;
+    }
+    .max-w-100\@#{$queryPrefix} {
+      max-width: 100%;
+    }
+    /*=============================
+            Height
+        ===============================*/
+    .h-50\@#{$queryPrefix} {
+      height: 50%;
+    }
+    .h-100\@#{$queryPrefix} {
+      height: 100%;
+    }
+    .h-a\@#{$queryPrefix} {
+      height: auto;
+    }
+    .h-inh\@#{$queryPrefix} {
+      height: inherit;
+    }
+    .h-ini\@#{$queryPrefix} {
+      height: initial;
+    }
+    .min-h-100\@#{$queryPrefix} {
+      min-height: 100%;
+    }
+    .max-h-100\@#{$queryPrefix} {
+      max-height: 100%;
+    }
+    /*=============================
+            background
+        ===============================*/
+    .bg-img\@#{$queryPrefix} {
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    /*=============================
+            border
+        ===============================*/
+    .b\@#{$queryPrefix} {
+      border-width: 1px;
+      border-style: solid;
+    }
+    .bt\@#{$queryPrefix} {
+      border-top-width: 1px;
+      border-top-style: solid;
+    }
+    .br\@#{$queryPrefix} {
+      border-right-width: 1px;
+      border-right-style: solid;
+    }
+    .bb\@#{$queryPrefix} {
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+    }
+    .bl\@#{$queryPrefix} {
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+    .b-off\@#{$queryPrefix} {
+      border: none;
+    }
+    @each $element, $color in $color-list {
+      .b-#{$element}\@#{$queryPrefix} {
+        border-color: $color;
+      }
+    }
+    /*=============================
+            border-radius
+        ===============================*/
+    @each $element, $border-radius in $border-radius-list {
+      $suffix: checkOnRegular($element);
+
+      .rs#{$suffix}\@#{$queryPrefix} {
+        border-radius: #{$border-radius}px;
+      }
+    }
+
+    .rs-circle\@#{$queryPrefix} {
+      border-radius: 50%;
+    }
+    .rs-off\@#{$queryPrefix} {
+      border-radius: 0px;
+    }
+    /*=============================
+            Text Align
+        ===============================*/
+    .ta-l\@#{$queryPrefix} {
+      text-align: left;
+    }
+    .ta-c\@#{$queryPrefix} {
+      text-align: center;
+    }
+    .ta-r\@#{$queryPrefix} {
+      text-align: right;
+    }
+    /*=============================
+            Text Decoration
+        ===============================*/
+    .td-u\@#{$queryPrefix} {
+      text-decoration: underline;
+    }
+    .td-n\@#{$queryPrefix} {
+      text-decoration: none;
+    }
+    /*=============================
+            Text Transform
+        ===============================*/
+    .tt-u\@#{$queryPrefix} {
+      text-transform: uppercase;
+    }
+    .tt-l\@#{$queryPrefix} {
+      text-transform: lowercase;
+    }
+    .tt-c\@#{$queryPrefix} {
+      text-transform: capitalize;
+    }
+    .tt-n\@#{$queryPrefix} {
+      text-transform: none;
+    }
+    /*=============================
+            White Space
+        ===============================*/
+    .ws-n\@#{$queryPrefix} {
+      white-space: normal;
+    }
+    .ws-nw\@#{$queryPrefix} {
+      white-space: nowrap;
+    }
+
+    /*=============================
+            Z-index
+        ===============================*/
+    @each $z-index in $z-index-list {
+      .zi-#{$z-index}\@#{$queryPrefix} {
+        z-index: $z-index;
+      }
+    }
+
+    /*=============================
+            Line Height List
+        ===============================*/
+    @each $element, $line-height in $line-height-list {
+      $suffix: checkOnRegular($element);
+
+      .lh#{$suffix}\@#{$queryPrefix} {
+        line-height: $line-height;
+      }
+    }
+    /*=============================
+            Font List
+        ===============================*/
+    @each $element, $font in $font-list {
+      $suffix: checkOnRegular($element);
+
+      .f#{$suffix}\@#{$queryPrefix} {
+        font-size: #{$font}px;
+      }
+    }
+    /*=============================
+            Font Weight List
+        ===============================*/
+    @each $element, $weight in $weight-list {
+      .fw-#{$element}\@#{$queryPrefix} {
+        font-weight: $weight;
+      }
+    }
+    /*
+        .########.....###....########.
+        .##.....##...##.##...##.....##
+        .##.....##..##...##..##.....##
+        .########..##.....##.##.....##
+        .##........#########.##.....##
+        .##........##.....##.##.....##
+        .##........##.....##.########.
+
+        .##.....##....###....########.
+        .###...###...##.##...##.....##
+        .####.####..##...##..##.....##
+        .##.###.##.##.....##.########.
+        .##.....##.#########.##...##..
+        .##.....##.##.....##.##....##.
+        .##.....##.##.....##.##.....##
+        */
+    /*=============================
+            Spacers on mobile (SM)
+        ===============================*/
+    @each $element, $spacer in $spacer-list {
+      $suffix: checkOnRegular($element);
+
+      .p#{$suffix}\@#{$queryPrefix} {
+        padding: #{$spacer}px;
+      }
+      .pt#{$suffix}\@#{$queryPrefix} {
+        padding-top: #{$spacer}px;
+      }
+      .pb#{$suffix}\@#{$queryPrefix} {
+        padding-bottom: #{$spacer}px;
+      }
+      .pl#{$suffix}\@#{$queryPrefix} {
+        padding-left: #{$spacer}px;
+      }
+      .pr#{$suffix}\@#{$queryPrefix} {
+        padding-right: #{$spacer}px;
+      }
+      .mt#{$suffix}\@#{$queryPrefix} {
+        margin-top: #{$spacer}px;
+      }
+      .mb#{$suffix}\@#{$queryPrefix} {
+        margin-bottom: #{$spacer}px;
+      }
+      .ml#{$suffix}\@#{$queryPrefix} {
+        margin-left: #{$spacer}px;
+      }
+      .mr#{$suffix}\@#{$queryPrefix} {
+        margin-right: #{$spacer}px;
+      }
+    }
+
+    .ml-a\@#{$queryPrefix} {
+      margin-left: auto;
+    }
+    .mr-a\@#{$queryPrefix} {
+      margin-right: auto;
+    }
+    .mt-a\@#{$queryPrefix} {
+      margin-top: auto;
+    }
+    .mb-a\@#{$queryPrefix} {
+      margin-bottom: auto;
+    }
+    .mx-a\@#{$queryPrefix} {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /*=============================
+            Elements Spacer
+        ===============================*/
+    @each $element, $spacer in $elements-spacer-list {
+      $suffix: checkOnRegular($element);
+
+      .elements-spacer#{$suffix}\@#{$queryPrefix} {
+        margin-bottom: -#{$spacer}px;
+        > * {
+          margin-bottom: #{$spacer}px;
+        }
+      }
+    }
+
+    /*=============================
+            Colors
+        ===============================*/
+    @each $element, $color in $color-list {
+      .c-#{$element}\@#{$queryPrefix} {
+        color: $color;
+      }
+    }
+    @each $element, $color in $color-list {
+      .bg-#{$element}\@#{$queryPrefix} {
+        background-color: $color;
+      }
+    }
+  }
+  //MQ
+}

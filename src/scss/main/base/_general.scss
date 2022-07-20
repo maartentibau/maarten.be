@@ -1,0 +1,123 @@
+//======================
+//Custom Side wide CSS
+//======================
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.c-primary,
+.c-primary-hover:hover {
+  color: var(--c-primary);
+}
+.c-secondary,
+.c-secondary-hover:hover {
+  color: var(--c-secondary);
+}
+.c-grey,
+.c-secondary-hover:hover {
+  color: var(--c-grey);
+}
+
+.bg-primary,
+.bg-primary-hover:hover {
+  background-color: var(--bg-primary);
+}
+.bg-secondary,
+.bg-secondary-hover:hover {
+  background-color: var(--bg-secondary);
+}
+.bg-grey-1,
+.bg-grey-1-hover:hover {
+  background-color: var(--bg-grey-1);
+}
+.bg-grey-2,
+.bg-grey-2-hover:hover {
+  background-color: var(--bg-grey-2);
+}
+.bg-grey-3,
+.bg-grey-3-hover:hover {
+  background-color: var(--bg-grey-3);
+}
+.bg-grey-4,
+.bg-grey-4-hover:hover {
+  background-color: var(--bg-grey-4);
+}
+.bg-grey-5,
+.bg-grey-5-hover:hover {
+  background-color: var(--bg-grey-5);
+}
+
+.b-primary,
+.b-primary-hover:hover {
+  border-color: var(--bd-primary);
+}
+.b-secondary,
+.b-secondary-hover:hover {
+  border-color: var(--bd-secondary);
+}
+.b-grey {
+  border-color: var(--bd-grey);
+}
+
+.bg-stretch-right {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    display: block;
+    width: 20vw;
+    background-color: inherit;
+  }
+}
+
+.bg-stretch-left {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    display: block;
+    width: 20vw;
+    background-color: inherit;
+  }
+}
+
+@media only screen and (max-width: $phone) {
+  .bg-stretch-right\@sm {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
+      display: block;
+      width: 20vw;
+      background-color: inherit;
+    }
+  }
+
+  .bg-stretch-left\@sm {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 100%;
+      display: block;
+      width: 20vw;
+      background-color: inherit;
+    }
+  }
+}

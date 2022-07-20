@@ -1,0 +1,17 @@
+{% if article == true %}
+  <meta property="og:type" content="article" />
+{% else %}
+  <meta property="og:type" content="website" />
+{% endif %}
+{% if title %}
+  <meta name="og:title" content="{{ title }} - {{ site.name }}" />
+{% else %}
+  <meta name="og:title" content="{{ site.name }}" />
+{% endif %}
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+{% if meta %}
+  <meta name="og:image" content="{{ meta.image | buildMetaImage }}" />
+{% else %}
+  <meta name="og:image" content="{{ '/static/meta/maarten.be-800x418.jpg' | buildUrl(true) }}" />
+{% endif %}

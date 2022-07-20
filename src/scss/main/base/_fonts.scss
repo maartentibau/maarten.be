@@ -1,0 +1,139 @@
+// ###### ###### #####  ##   ##  ######
+//   ##  ###    ##   ## ###  ## ##
+//   ##  ##     ##   ## ## # ##  #####
+//   ##  ###    ##   ## ##  ###      ##
+// ###### ###### #####  ##   ## ######
+
+@font-face {
+  font-family: 'icons';
+  src: url('/static/icons/fonts/icons.ttf?hgtakfx4') format('truetype'), url('/static/icons/fonts/icons.woff?hgtakfx4') format('woff'),
+    url('/static/icons/fonts/icons.svg?hgtakfx4#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  display: inline-block;
+
+  /* use !important to prevent issues with browser extensions that change fonts */
+  &:before {
+    @extend %icon-style;
+    display: block;
+  }
+}
+
+.icon-list {
+  li {
+    position: relative;
+    padding-left: 25px;
+    & + li {
+      margin-top: 10px;
+    }
+    [class*='icon-'] {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      font-size: 18px;
+      line-height: 1;
+      color: $color-primary;
+    }
+  }
+}
+
+.icon-moon {
+  &:before {
+    content: $icon-moon;
+  }
+}
+.icon-sun {
+  &:before {
+    content: $icon-sun;
+  }
+}
+.icon-arrow-left-long {
+  &:before {
+    content: $icon-arrow-left-long;
+  }
+}
+.icon-arrow-right-long {
+  &:before {
+    content: $icon-arrow-right-long;
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+.icon-arrow-up {
+  &:before {
+    content: $icon-arrow-up;
+  }
+}
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
+}
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-carret-down {
+  &:before {
+    content: $icon-carret-down;
+  }
+}
+.icon-carret-up {
+  &:before {
+    content: $icon-carret-up;
+  }
+}
+.icon-mail {
+  &:before {
+    content: $icon-mail;
+  }
+}
+.icon-youtube {
+  &:before {
+    content: $icon-youtube;
+  }
+}
+.icon-facebook {
+  &:before {
+    content: $icon-facebook;
+  }
+}
+.icon-whatsapp {
+  &:before {
+    content: $icon-whatsapp;
+  }
+}
+.icon-instagram {
+  &:before {
+    content: $icon-instagram;
+  }
+}
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin;
+  }
+}
+.icon-twitter {
+  &:before {
+    content: $icon-twitter;
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github;
+  }
+}

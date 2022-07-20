@@ -1,0 +1,28 @@
+{% if title %}
+  <title>{{ title }} - {{ site.name }}</title>
+{% else %}
+  <title>{{ site.name }}</title>
+{% endif %}
+<meta name="description" content="{{ description }}">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/prismjs@1.28.0/themes/prism-okaidia.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{ '/static/css/main.css' | buildUrl(true) }}" media="screen" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/static/meta/apple-touch-icon.png' | buildUrl(true) }}">
+<link rel="icon" type="image/x-icon" href="{{ '/static/meta/favicon.ico' | buildUrl(true) }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/static/meta/favicon-32x32.png' | buildUrl(true) }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/static/meta/favicon-16x16.png' | buildUrl(true) }}">
+<link rel="manifest" href="{{ '/static/meta/site.webmanifest' | buildUrl(true) }}">
+<link rel="mask-icon" href="{{ '/static/meta/safari-pinned-tab.svg' | buildUrl(true) }}" color="#6271ff">
+<link rel="shortcut icon" href="{{ '/static/meta/favicon.ico' | buildUrl(true) }}">
+<meta name="apple-mobile-web-app-title" content="Maarten Tibau">
+<meta name="application-name" content="Maarten Tibau">
+<meta name="msapplication-TileColor" content="#26272f">
+<meta name="msapplication-config" content="{{ '/static/meta/browserconfig.xml' | buildUrl(true) }}">
+<meta name="theme-color" content="#26272f">
+<meta name="color-scheme" content="dark light">
+<meta name="viewport" content="width=device-width, maximum-scale=5.0, user-scalable=yes" />
+{% include 'layouts/blocks/meta.twitter.njk' %}
+{% include 'layouts/blocks/meta.open-graph.njk' %}

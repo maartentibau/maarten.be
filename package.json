@@ -1,0 +1,40 @@
+{
+  "name": "maarten.be",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass src/scss/main:public/static/css --watch",
+    "build:sass": "sass src/scss/main:public/static/css",
+    "build:sass:prod": "sass src/scss/main:public/static/css --style compressed",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "ELEVENTY_ENV=development eleventy",
+    "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
+    "start": "npm run watch:eleventy & npm run watch:sass",
+    "build": "npm run build:eleventy & npm run build:sass",
+    "build:prod": "npm run build:eleventy:prod & npm run build:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maartentibau/maarten.be.git"
+  },
+  "keywords": [],
+  "author": "Maarten Tibau",
+  "license": "Maarten Tibau",
+  "bugs": {
+    "url": "https://github.com/maartentibau/maarten.be/issues"
+  },
+  "homepage": "https://github.com/maartentibau/maarten.be#readme",
+  "dependencies": {
+    "@11ty/eleventy": "1.0.1",
+    "sass": "1.53.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy-navigation": "0.3.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "4.1.0",
+    "html-minifier": "4.0.0",
+    "luxon": "3.0.1",
+    "markdown-it-anchor": "8.6.4",
+    "prettier": "2.7.1"
+  }
+}
