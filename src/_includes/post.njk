@@ -1,0 +1,63 @@
+{%  extends 'base.njk' %}
+
+{% block head %}
+<link href="https://unpkg.com/prismjs@1.28.0/themes/prism-okaidia.css" rel="stylesheet">
+<title>{{ title }} - Maarten Tibau</title>
+<meta name="description" content="{{ description }}">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@maartentibau" />
+<meta name="twitter:creator" content="@maartentibau" />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
+<meta name="twitter:image" content="{{ meta.image | buildMetaImage }}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:image" content="{{ meta.image | buildMetaImage }}" />
+{%  endblock %}
+
+{% block content %}
+<main class="row">
+  <div class="panel bg-grey-3 pt-lg pb-lg mb-lg">
+    <div class="grid">
+      <div class="col-17">
+        <h1 class="fw-medium f-xxxl f-xxl@sm">{{ title }}</h1>
+      </div>
+    </div>
+    <div class="mt-xs mb-xs bb b-grey"></div>
+    <div class="c-grey mb-xs f-sm@sm">{{ date | formatDate }}</div>
+    <div class="c-secondary f-sm">{{ hashtags | formatHashtags }}</div>
+  </div>
+
+  <div class="grid">
+    <div class="col-17 mb-xxl">
+      <div class="editor-txt br b-grey pr-lg pr-off@sm b-off@sm">
+        {{ content | safe }}
+      </div>
+    </div>
+
+    <div class="col-7 pt-md pt-off@sm">
+      <a class="d-f middle mb-lg hide@sm" href="/blog"><i class="icon-arrow-left c-primary f-lg mr-xs"></i> Back to overview</a>
+      <div class="fw-medium f-md ta-c@sm">Share with your friends</div>
+      <ul class="socials f-lg mt-xs mb-md center@sm">
+        <li><a href="https://twitter.com/intent/tweet?text={{ title }}&url={{ site.url }}{{ page.url }}"><i class="icon-twitter"></i></a></li>
+        <li><a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}"><i class="icon-linkedin"></i></a></li>
+        <li><a href="#0"><i class="icon-github"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<section class="bg-grey-3 pt-xl pb-xxl">
+  <div class="row">
+    <h2 class="fw-light f-xxxl f-xxl@sm ta-c mb-xl">Other Articles You Might Like</h2>
+
+    <div class="grid elements-spacer-lg elements-spacer@sm">
+      {% for post in collections.posts | recentPosts(2) %}
+        {% include 'layouts/components/recent-article.njk' %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
