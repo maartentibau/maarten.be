@@ -15,9 +15,9 @@
 
     <div class="col-10 last@sm">
       <ul class="nav-list js-nav-list">
-        <li class="{% if page.url == '/' %}active{% endif %}"><a href="{{ '/' | buildUrl }}">Home</a></li>
-        <li class="{% if '/about' in page.url %}active{% endif %}"><a href="{{ '/about' | buildUrl }}">About me</a></li>
-        <li class="{% if '/blog' in page.url %}active{% endif %}"><a href="{{ '/blog' | buildUrl }}">Blog</a></li>
+        <li class="{% if page.url == '/' %}active{% endif %}"><a href="{{ '/' }}">Home</a></li>
+        <li class="{% if '/about' in page.url %}active{% endif %}"><a href="{{ '/about/' }}">About me</a></li>
+        <li class="{% if '/blog' in page.url %}active{% endif %}"><a href="{{ '/blog/' }}">Blog</a></li>
         <li class="show@sm">
           <button class="theme-toggle js-theme-toggle">
             <div class="theme-toggle-dark" title="Enable dark mode"><i class="icon-moon"></i></div>

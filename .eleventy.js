@@ -29,7 +29,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/static');
 
   eleventyConfig.addFilter('formatDate', (isoDate) => {
-    return DateTime.fromISO(isoDate, { zone: 'utc+2' }).toLocaleString(DateTime.DATE_FULL);
+    return DateTime.fromISO(isoDate, { zone: 'utc+2' }).toFormat('dd LLLL yyyy');
   });
 
   eleventyConfig.addFilter('sortedPosts', (posts, limit = 1) => {
@@ -57,7 +57,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('featuredPost', (posts) => {
-    const featuredPosts = publishedPosts(posts).filter((post) => !!post?.featured);
+    const featuredPosts = publishedPosts(posts).filter((post) => !!post?.data?.featured);
     featuredPosts.sort(() => 0.5 - Math.random());
 
     return featuredPosts.slice(0, 1);
@@ -79,7 +79,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter('buildMetaImage', (image) => {
-    return image ? `'https://maarten.be/static/images/posts/${image}?v=${buildTimestamp}` : '';
+    return image ? `https://maarten.be/static/images/posts/${image}?v=${buildTimestamp}` : '';
   });
 
   eleventyConfig.addFilter('formatHashtags', (tags) => {
@@ -117,9 +117,7 @@ module.exports = function (eleventyConfig) {
 };
 
 function sortPosts(posts) {
-  return ([...posts] ?? [])
-    .filter((post) => !!post?.published)
-    .sort((a, b) => DateTime.fromISO(b.date).toUnixInteger() - DateTime.fromISO(a.date).toUnixInteger());
+  return ([...posts] ?? []).sort((a, b) => DateTime.fromISO(b.date).toUnixInteger() - DateTime.fromISO(a.date).toUnixInteger());
 }
 
 function sortRandomly(data) {
@@ -150,5 +148,5 @@ function renderPermalink(slug, opts, state, idx) {
 }
 
 function publishedPosts(posts) {
-  return ([...posts] ?? []).filter((post) => !!post?.published);
+  return ([...posts] ?? []).filter((post) => !!post?.data?.published);
 }

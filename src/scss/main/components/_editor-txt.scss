@@ -19,8 +19,8 @@
     font-weight: $h1-font-weight;
     line-height: $h1-line-height;
     font-family: $h1-font-family;
-    margin-bottom: spacer(md);
-    margin-top: spacer(lg);
+    margin-bottom: spacer(rg);
+    margin-top: spacer(rg);
   }
 
   h2 {
@@ -28,8 +28,8 @@
     font-weight: $h2-font-weight;
     line-height: $h2-line-height;
     font-family: $h2-font-family;
-    margin-bottom: spacer(md);
-    margin-top: spacer(lg);
+    margin-bottom: spacer(rg);
+    margin-top: spacer(rg);
   }
 
   h3 {
@@ -37,8 +37,8 @@
     font-weight: $h3-font-weight;
     line-height: $h3-line-height;
     font-family: $h3-font-family;
-    margin-bottom: spacer(md);
-    margin-top: spacer(lg);
+    margin-bottom: spacer(rg);
+    margin-top: spacer(rg);
   }
 
   h1 + h2,
@@ -53,6 +53,7 @@
   h5,
   h6 {
     outline: none;
+    padding-right: 25px;
 
     .header-anchor {
       display: none;
@@ -75,7 +76,7 @@
   }
 
   p {
-    margin-bottom: spacer(md);
+    margin-bottom: spacer(rg);
 
     &:empty {
       display: none;
@@ -102,7 +103,7 @@
   ul,
   ol {
     padding-left: 0px;
-    margin-bottom: spacer(md);
+    margin-bottom: spacer(rg);
     line-height: 2;
   }
 
@@ -141,21 +142,21 @@
 
   blockquote {
     border-left: 5px solid $color-primary;
-    padding: spacer(rg) 0 spacer(rg) spacer(md);
-    margin-bottom: spacer(md);
-    font-size: 30px;
+    padding: spacer(sm) 0 spacer(sm) spacer(md);
+    margin-bottom: spacer(rg);
+    font-size: 18px;
     line-height: 1.2;
   }
 
   img {
     display: block;
     width: 100%;
-    margin-bottom: spacer(md);
+    margin-bottom: spacer(rg);
   }
 
   pre {
     background-color: $color-black;
-    margin-bottom: spacer(md);
+    margin-bottom: spacer(rg);
     border-radius: rs(sm);
   }
 
@@ -175,6 +176,19 @@
     overflow-x: auto;
   }
 
+  p code {
+    padding: 0.1em 0.2em;
+    font-family: monospace;
+    background-color: rgba(175, 184, 193, 0.2);
+    border-radius: 4px;
+  }
+
+  p img {
+    border-radius: rs(sm);
+    width: auto;
+    margin: 0 auto;
+  }
+
   /*
     .##.....##..#######..########..####.##.......########
     .###...###.##.....##.##.....##..##..##.......##......
@@ -189,17 +203,20 @@
 
     h1 {
       font-size: $h1-font-size-mobile;
-      margin-bottom: spacer(rg);
+      margin-top: spacer(sm);
+      margin-bottom: spacer(sm);
     }
 
     h2 {
       font-size: $h2-font-size-mobile;
-      margin-bottom: spacer(rg);
+      margin-top: spacer(sm);
+      margin-bottom: spacer(sm);
     }
 
     h3 {
       font-size: $h3-font-size-mobile;
-      margin-bottom: spacer(rg);
+      margin-top: spacer(sm);
+      margin-bottom: spacer(sm);
     }
 
     ul,
@@ -214,7 +231,7 @@
     }
 
     blockquote {
-      font-size: 20px;
+      font-size: 18px;
       padding: spacer(sm) 0 spacer(sm) spacer(rg);
     }
   }

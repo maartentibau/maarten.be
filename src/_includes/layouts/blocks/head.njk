@@ -3,8 +3,11 @@
 {% else %}
   <title>{{ site.name }}</title>
 {% endif %}
+<meta name="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="{{ description }}">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="author" content="Maarten Tibau">
+<meta name="copyright" content="Maarten Tibau">
+<link rel="canonical" href="{{ site.url }}{{ page.url | url }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap" rel="stylesheet">

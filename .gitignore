@@ -13,6 +13,7 @@ testem.log
 .c9/
 *.sublime-workspace
 /public
+/_projectfiles
 
 # E2E
 /e2e/*.js

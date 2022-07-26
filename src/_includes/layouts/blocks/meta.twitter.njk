@@ -7,8 +7,13 @@
 {% else %}
   <meta name="twitter:title" content="{{ site.name }}" />
 {% endif %}
-{% if meta %}
-  <meta name="twitter:image" content="{{ meta.image | buildMetaImage }}" />
+{% if imageSocials %}
+  <meta name="twitter:image" content="{{ imageSocials | buildMetaImage }}" />
+  <meta name="twitter:label1" content="Written by">
+  <meta name="twitter:data1" content="Maarten Tibau">
+  <meta name="twitter:label2" content="Published on">
+  <meta name="twitter:label2" content="{{ date | formatDate }}">
 {% else %}
-  <meta name="twitter:image" content="{{ '/static/meta/maarten.be-800x418.jpg' | buildUrl(true) }}" />
+  <meta name="twitter:image" content="{{ '/static/meta/maarten.be-1200x1200.webp' | buildUrl(true) }}" />
 {% endif %}
+
