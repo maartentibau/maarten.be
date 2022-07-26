@@ -4583,6 +4583,7 @@ body.theme-light .theme-toggle-light {
 .editor-txt h5,
 .editor-txt h6 {
   outline: none;
+  padding-right: 25px;
 }
 .editor-txt h1 .header-anchor,
 .editor-txt h2 .header-anchor,
@@ -4703,6 +4704,17 @@ body.theme-light .theme-toggle-light {
   word-wrap: normal;
   line-height: inherit;
   overflow-x: auto;
+}
+.editor-txt p code {
+  padding: 0.1em 0.2em;
+  font-family: monospace;
+  background-color: rgba(175, 184, 193, 0.2);
+  border-radius: 4px;
+}
+.editor-txt p img {
+  border-radius: 10px;
+  width: auto;
+  margin: 0 auto;
 }
 @media only screen and (max-width: 767px) {
   .editor-txt {
