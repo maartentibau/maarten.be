@@ -2,23 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
     <url>
+      <loc>https://maarten.be/blog/20220725/how-to-deploy-your-eleventy-website-to-github-pages-using-github-actions/</loc>
+      <lastmod>2022-07-25T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
+      <loc>https://maarten.be/blog/20220725/foo-bar/</loc>
+      <lastmod>2022-07-25T00:00:00.000Z</lastmod>
+    </url>
+  
+    <url>
       <loc>https://maarten.be/about/</loc>
-      <lastmod>2022-07-24T08:43:50.007Z</lastmod>
+      <lastmod>2022-07-26T04:14:50.550Z</lastmod>
     </url>
   
     <url>
       <loc>https://maarten.be/blog/</loc>
-      <lastmod>2022-07-24T08:43:50.007Z</lastmod>
+      <lastmod>2022-07-26T04:14:50.550Z</lastmod>
     </url>
   
     <url>
       <loc>https://maarten.be/</loc>
-      <lastmod>2022-07-24T08:43:50.007Z</lastmod>
-    </url>
-  
-    <url>
-      <loc>https://maarten.be/blog/20220725/how-to-deploy-your-eleventy-website-to-github-pages-using-github-actions/</loc>
-      <lastmod>2022-07-25T00:00:00.000Z</lastmod>
+      <lastmod>2022-07-26T04:14:50.550Z</lastmod>
     </url>
   
 </urlset>
