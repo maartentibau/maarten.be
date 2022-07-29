@@ -4553,24 +4553,24 @@ body.theme-light .theme-toggle-light {
   font-weight: 500;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 40px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .editor-txt h2 {
   font-size: 35px;
   font-weight: 500;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 40px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .editor-txt h3 {
   font-size: 25px;
   font-weight: 500;
   line-height: 1.5;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 40px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 .editor-txt h1 + h2,
 .editor-txt h2 + h3 {
@@ -4619,7 +4619,7 @@ body.theme-light .theme-toggle-light {
   display: inline;
 }
 .editor-txt p {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .editor-txt p:empty {
   display: none;
@@ -4641,7 +4641,7 @@ body.theme-light .theme-toggle-light {
 .editor-txt ul,
 .editor-txt ol {
   padding-left: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   line-height: 2;
 }
 .editor-txt ol {
@@ -4675,19 +4675,19 @@ body.theme-light .theme-toggle-light {
 }
 .editor-txt blockquote {
   border-left: 5px solid #6271ff;
-  padding: 30px 0 30px 40px;
-  margin-bottom: 40px;
-  font-size: 30px;
+  padding: 20px 0 20px 40px;
+  margin-bottom: 30px;
+  font-size: 18px;
   line-height: 1.2;
 }
 .editor-txt img {
   display: block;
   width: 100%;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 .editor-txt pre {
   background-color: #000;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   border-radius: 10px;
 }
 .editor-txt pre code {
@@ -4722,15 +4722,18 @@ body.theme-light .theme-toggle-light {
   }
   .editor-txt h1 {
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .editor-txt h2 {
     font-size: 25px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .editor-txt h3 {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
   .editor-txt ul,
 .editor-txt ol {
@@ -4740,7 +4743,7 @@ body.theme-light .theme-toggle-light {
     top: calc((1.5em - 10px) / 2);
   }
   .editor-txt blockquote {
-    font-size: 20px;
+    font-size: 18px;
     padding: 20px 0 20px 30px;
   }
 }
