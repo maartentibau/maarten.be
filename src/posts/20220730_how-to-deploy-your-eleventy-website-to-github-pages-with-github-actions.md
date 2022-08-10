@@ -57,7 +57,7 @@ Create the following folder structure.
   - static
     - scss
 
-When you've done that, create a file called `.eleventy.js` in the `src` folder and give it this content.
+When you've done that, create a `.eleventy.js` file in the root folder and give it this content.
 
 ```js
 module.exports = function (eleventyConfig) {
