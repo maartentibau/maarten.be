@@ -12,7 +12,7 @@
     "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
     "start": "npm run watch:eleventy & npm run watch:sass",
     "build": "npm run build:eleventy & npm run build:sass",
-    "build:prod": "npm run build:eleventy:prod & npm run build:sass"
+    "build:prod": "npm run build:eleventy:prod & npm run build:sass:prod"
   },
   "repository": {
     "type": "git",

@@ -115,7 +115,7 @@ Open a browser and navigate to `localhost:8080`, it should show `Hello World!` o
 To make sure that the styling of our website is properly rendered lets modify the `base.njk` by adding the `url` to our stylesheet inside the `<head>` tag.
 
 ```html
-<link rel="stylesheet" type="text/css" href="{{ '/static/css/main.css' | url }}" media="screen" />
+<link rel="stylesheet" type="text/css" href="{{ 'static/css/main.css' | url }}" media="screen" />
 ```
 
 Let's do something crazy and add this to `main.scss` and go back to the browser to see the result.
@@ -269,7 +269,7 @@ Now let's add extra commands to our `scripts` property in the `package.json` fil
 ```bash
 "build:sass:prod": "sass src/static/scss:public/static/css --style compressed",
 "build:eleventy:prod": "ELEVENTY_ENV=production eleventy",
-"build:prod": "npm run build:eleventy:prod & npm run build:sass"
+"build:prod": "npm run build:eleventy:prod & npm run build:sass:prod"
 ```
 
 Once that is done we can push all the changes to our repository and let the magic happen!
@@ -280,9 +280,16 @@ git commit -m "build and deploy"
 git push
 ```
 
-Now head over to your repository on GitHub and click on the `Actions` tab on top. Normally you should see the `Build & Deploy` workflow being executed, once that is done another workflow called `pages-build-deployment` is triggered and deploys the generated website to GitHub Pages. Navigate to the URL where your website is published to see the final result. You've done it!
+Now head over to your repository on GitHub and click on the `Actions` tab on top. Normally you should see the `Build & Deploy` workflow being executed, once that is done another workflow called `pages-build-deployment` is triggered and deploys the generated website to GitHub Pages.
 
 ![GitHub actions tab](/static/images/posts/github-actions.jpg)
+
+After the `Build & Deploy` workflow is executed a new branch called `gh-pages` is auto-created. In this branch the generated output of your Eleventy site will be stored. To be able to host the website properly we need to inform GitHub Pages about this. Navigate to the Settings tab and select Pages in the list on the left. Change the branch
+from which your GitHub Pages site is currently being built to `gh-pages` and hit `save`.
+
+![GitHub Pages settings repository](/static/images/posts/github-settings-gh-pages-repository.jpg)
+
+The `pages-build-deployment` workflow will be automatically triggered again and after it has finished you can navigate to the URL where your website is published to see the final result. You've done it!
 
 ## Conclusion
 
